@@ -1,12 +1,12 @@
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jdk-alpine
 
-#working directory
+# working directory
 WORKDIR /app
 
 # Copy Maven wrapper and pom.xml first for better layer caching
 COPY mvnw .
-COPY .mvn .mvn 
-COPY pom.xml . 
+COPY .mvn .mvn
+COPY pom.xml .
 
 # Make Maven wrapper executable
 RUN chmod +x ./mvnw
